@@ -1,0 +1,21 @@
+<template>
+
+    <lightning-card title={cardTitle} icon-name="utility:list">
+	
+	    <!-- Table of certification held records for given service vendor -->
+        <lightning-datatable
+            key-field="Id"
+            data={rowData}
+            columns={colData}>
+        </lightning-datatable>
+		
+        <!-- Display error message if any -->
+        <template lwc:if={errorMessage}>
+            <div class="slds-var-p-horizontal_small" style="color: red">
+                {errorMessage}
+            </div>
+        </template>
+
+    </lightning-card>
+	
+</template>

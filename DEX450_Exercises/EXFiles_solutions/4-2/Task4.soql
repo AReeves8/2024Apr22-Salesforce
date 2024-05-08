@@ -1,0 +1,3 @@
+SELECT Id, Subject
+    FROM Case
+    WHERE Subject LIKE '%printer%'

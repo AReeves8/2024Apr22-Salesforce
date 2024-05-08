@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Category__c</fullName>
+    <description>Product category associated with the customer’s issue.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Choose which product category is causing the customer’s issue.</inlineHelpText>
+    <label>Product Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Accessories</fullName>
+                <default>false</default>
+                <label>Accessories</label>
+            </value>
+            <value>
+                <fullName>Desktops</fullName>
+                <default>false</default>
+                <label>Desktops</label>
+            </value>
+            <value>
+                <fullName>Laptops</fullName>
+                <default>false</default>
+                <label>Laptops</label>
+            </value>
+            <value>
+                <fullName>Networking Equipment</fullName>
+                <default>false</default>
+                <label>Networking Equipment</label>
+            </value>
+            <value>
+                <fullName>Printers</fullName>
+                <default>false</default>
+                <label>Printers</label>
+            </value>
+            <value>
+                <fullName>Servers</fullName>
+                <default>false</default>
+                <label>Servers</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

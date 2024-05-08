@@ -1,0 +1,3 @@
+SELECT Id, Subject, Status, IsClosed 
+    FROM Case
+    WHERE IsClosed = TRUE

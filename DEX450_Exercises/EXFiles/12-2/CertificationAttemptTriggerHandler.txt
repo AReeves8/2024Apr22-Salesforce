@@ -1,0 +1,172 @@
+public without sharing class CertificationAttemptTriggerHandler {
+
+    public static void createCertificationHeld(List<Certification_Attempt__c> certAttempts, Map<Id, Certification_Attempt__c> oldMap) {
+
+        /**
+         * If a Contact successfully passes a Certification Attempt, then the
+         * code will gather the data necessary to perform a query for related 
+         * Certification Attempt records.
+         */
+
+        System.Debug('Calling the createCertificationHeld method');
+
+        // The set of candidates and certifications will be used to filter  
+        // the SOQL query when looking at existing cert attempt records:
+        /** TODO #1: Declare and initialize:
+         *   -- A variable of type Set of IDs named candidates initialized to newly constructed set.
+         *   -- A variable of type Set of IDs named certifications initialized to newly constructed set.
+         */
+
+
+        // Extract candidates and certifications from incoming records that have the status 'Complete/Pass'
+        /** TODO #2: Create a for loop with an iterator of type Certification_Attempt__c
+         * named attempt that iterates over the certAttempts variable. Within the for loop,
+         *    -- Create an if statement that checks if a record's status is equal to 'Complete/Pass' 
+         *       and if it's insert (use OldMap to determine) OR if its status
+         *       has changed from the pre-update data. Within the if statement,
+         *       -- Call the add method of the Set class on the variable candidates,
+         *          passing in the Certification_Candidate__c field of the variable named attempt.
+         *       -- Call the add method of the Set class on the variable certifications,
+         *          passing in the Certification_Id__c field of the variable named attempt.
+         */
+
+
+        //TODO #3: Using the pattern of nested for loops for SOQL queries
+        /**        -- write an outer loop to query for Certification_Attempt__c sObjects that will have an
+         *            iterator whose type is a list of Certification_Attempt__c sObjects named cAs that
+         *            iterates over the returned value of a SOQL query that:
+         *            -- Selects the Id, certification Id, certification candidate Id, and number of elements
+         *            -- from the Certification Attempt sObject
+         *            -- Filters the query for records:
+         *               -- whose status is 'Complete/Pass'.
+         *               -- and whose certification id is in the certifications collection variable named certifications.
+         *               -- and whose certification candidate id is in the candidates collection variable named candidates.
+         *         -- write an inner loop with an iterator of type Certification_Attempt__c 
+         *            named cA that iterates over the cAs variable from the outer loop:
+         *            -- Call the debug method of the System class and pass in a concatenated string that contains:
+         *               -- the string literal 'From Inner loop: Retrieved certAttempt id: '
+         *               -- id of the cA variable
+         *               -- the string literal ' candidate id: '
+         *               -- the Certification_Candidate__c field of the cA variable
+         *               -- the string literal ' certification id: '
+         *               -- the Certification_Id__c field of the cA variable
+         *  For example it should look like the following: 
+         *  Retrieved certAttempt id: a0661000000a1g5AAA candidate id: 00361000001qaOKAAY certification id: a0361000000pjOnAAI
+         */
+
+    }
+
+
+    public static void grantInstructorSharingAccess(List<Certification_Attempt__c> triggerNew, Map<Id, Certification_Attempt__c> oldMap, Boolean isInsert, Boolean isUpdate) {
+
+        /**
+          *  When a new certification attempt object is assigned an
+          *  instructor, or if an instructor changes on an existing
+          *  object, give the new instructor access to the record by
+          *  creating a share object, and remove access for the
+          *  previous instructor (if it is an update of that field)
+          */
+
+        System.debug('Starting the Grant Instructor Sharing Access logic');
+
+        // List of share records to insert in bulk
+        List<Certification_Attempt__Share> sharesToCreate = new List<Certification_Attempt__Share>();
+
+        // List of share records to delete in bulk
+        List<Certification_Attempt__Share> sharesToDelete = new List<Certification_Attempt__Share>();
+
+        // Map of the CertAttemptID to the Instructor User ID
+        Map<Id, Id> certAttemptToInstructorMap = new Map<Id, Id>();
+
+        // Loop through all the records in the trigger
+        for ( Certification_Attempt__c certAttempt : triggerNew ) {
+
+            // Check to see if this is an insert or the Instructor has changed
+            if (isInsert || certAttempt.Certifying_Instructor__c != oldMap.get(certAttempt.Id).Certifying_Instructor__c) {
+                // Create new Share record for the Instructor and add to list
+                if (certAttempt.Certifying_Instructor__c != null) {
+                    Certification_Attempt__Share certAttemptShare = new Certification_Attempt__Share(
+                        parentId = certAttempt.Id,
+                        userOrGroupId = certAttempt.Certifying_Instructor__c,
+                        rowCause = Schema.Certification_Attempt__Share.RowCause.Certifying_Instructor__c,
+                        accessLevel = 'Edit'
+                    );
+                    sharesToCreate.add(certAttemptShare);
+                }
+            }
+
+            if (isUpdate) {
+                // See the Instructor has changed
+                if ( certAttempt.Certifying_Instructor__c != oldMap.get(certAttempt.Id).Certifying_Instructor__c ) {
+                    // Add to map of Instructor changes
+                    System.debug('certAttempt.Certifying_Instructor__c is: ' + certAttempt.Certifying_Instructor__c);
+                    certAttemptToInstructorMap.put(certAttempt.Id, certAttempt.Certifying_Instructor__c);
+                }
+            }
+        }
+
+        if ( certAttemptToInstructorMap.size() > 0 ) {
+
+            System.debug('certAttemptToInstructorMap is: ' + certAttemptToInstructorMap);
+
+            for (Certification_Attempt__Share certAttemptShare :
+                                            [SELECT UserOrGroupId, RowCause, ParentId, Id, AccessLevel
+                                               FROM Certification_Attempt__Share
+                                              WHERE ParentId IN :certAttemptToInstructorMap.keySet()
+                                                AND RowCause = 'Certifying_Instructor__c']) {
+                if (certAttemptToInstructorMap.get(certAttemptShare.ParentId) != certAttemptShare.UserOrGroupId) {
+                    sharesToDelete.add(certAttemptShare);
+                }
+            }
+
+        }
+
+        try {
+            if ( sharesToCreate.size() > 0 ) {
+                insert sharesToCreate;
+            }
+            if ( sharesToDelete.size() > 0) {
+                delete sharesToDelete;
+            }
+        } catch (System.DmlException ex) {
+            Error_Log__c err = new Error_Log__c();
+            err.Source__c = 'grantInstructorSharingAccess';
+            err.message__c = ex.getMessage();
+            insert err;
+        }
+    }
+
+    public static void validateCertificationAttempt(List<Certification_Attempt__c> triggerNew) {
+
+        /**
+         *  If a Contact is trying to create a Certification Attempt
+         *  for an element that was already marked as "Complete/Pass"
+         *  or "In Progress", then do not allow the attempt to be
+         *  created and pass back an error
+         */
+
+        System.debug('Starting the Validate Certification Attempt logic');
+
+        // All Certification_Attempt__c records which are 'In Progress' OR 'Complete/Pass' will be stored here for comparison purposes
+        Set<String> concatStudentElement = new Set<String>();
+                Set<ID> candidateIDs = new Set<ID>();
+        for (Certification_Attempt__c dbca : triggerNew) {
+            candidateIDs.add(dbca.Certification_Candidate__c);
+        }
+        for (Certification_Attempt__c dbca : [SELECT Certification_Candidate__c, Certification_Element__c, Status__c
+                                               FROM Certification_Attempt__c
+                                              WHERE Status__c IN ('In Progress', 'Complete/Pass')
+                                                AND Certification_Candidate__c IN :candidateIDs]) {
+            // We need to know 1. Which student 2. Which element they have attempted (lab or multiple choice) 3. The status
+            concatStudentElement.add((String)dbca.Certification_Candidate__c + (String)dbca.Certification_Element__c + (String)dbca.Status__c);
+        }
+
+        for (Certification_Attempt__c ca : triggerNew) {
+            // If any element is In Progress or Complete/Pass, new attempts should not be allowed for those elements
+            if (concatStudentElement.contains((String)ca.Certification_Candidate__c + (String)ca.Certification_Element__c + 'In Progress') ||
+                concatStudentElement.contains((String)ca.Certification_Candidate__c + (String)ca.Certification_Element__c + 'Complete/Pass')) {
+                   ca.addError('Cannot attempt cert for element already in progress or completed');
+            }
+        }
+    }
+}

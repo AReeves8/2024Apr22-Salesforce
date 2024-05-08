@@ -1,0 +1,4 @@
+SELECT Id, Subject, Priority, Product_Category__c
+    FROM Case
+    WHERE Priority = 'High'
+        AND Product_Category__c = 'Printers'

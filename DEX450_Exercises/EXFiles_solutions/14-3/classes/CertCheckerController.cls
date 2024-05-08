@@ -1,0 +1,24 @@
+public with sharing class CertCheckerController {
+
+    // TODO: Add an annotation to enable the method to be invoked from a Lightning 
+    // Component - enabling client side data caching
+    @AuraEnabled(cacheable=true)
+    public static List<Certification_Held__c> getCertsHeld(Id acctId) {
+        List<Certification_Held__c> certsHeld = new List<Certification_Held__c>();
+
+        // Retrieve certification info for technicians belonging to the given service vendor (Account)
+        try {
+            certsHeld = [SELECT Id, Date_Achieved__c, Certified_Professional__r.Name, Certification__r.Name, 
+                                Certified_Professional__c, Certification__c
+                         FROM Certification_Held__c
+                         WHERE Certified_Professional__r.AccountId = :acctId
+                         WITH SECURITY_ENFORCED
+                         ORDER BY Certified_Professional__r.Name
+                        ];            
+        } catch (Exception e) {
+            throw new AuraHandledException('Unable to retrieve Certification Held records ' + e.getMessage());
+        }
+
+        return certsHeld;
+    }
+}

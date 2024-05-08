@@ -1,0 +1,21 @@
+<template>
+
+    <!-- Make sure we have something to display -->
+    <lightning-card if:true={techIds} title={cardTitle} icon-name="utility:list">
+
+        <!-- Table of Attendance records -->
+        <lightning-datatable
+            key-field="Id"
+            data={rowData}
+            columns={colData}
+            hide-checkbox-column>
+        </lightning-datatable>
+
+        <!-- Error message -->
+        <template lwc:if={errorMessage}>
+            <div class="slds-var-p-horizontal_small" style="color: red">{errorMessage}</div>
+        </template>          
+
+    </lightning-card>
+    
+</template>

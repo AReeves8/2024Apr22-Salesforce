@@ -1,0 +1,11 @@
+//--------------------------------------------------------------------------------------------
+//  TASK 3: No Apex is necessary in this task! 
+//         Write a SOQL query that selects Courses, but only those with related Certifications. 
+//         You should select the following fields: 
+//         - the Name field from Course 
+//         - the Name field from Certification 
+//         HINT: The FROM clause of the query should be: FROM Course__c 
+//
+//  Execute your SOQL Query via the Command Palette to verify that it's working as intended.
+//--------------------------------------------------------------------------------------------
+SELECT Name, Certification__r.Name FROM Course__c  WHERE Certification__c <> NULL

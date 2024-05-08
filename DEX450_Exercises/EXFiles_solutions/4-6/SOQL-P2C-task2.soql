@@ -1,0 +1,14 @@
+//--------------------------------------------------------------------------------------------
+//  TASK 2: No Apex is necessary in this task! 
+//          Write and test a query that selects Certifications, but only  
+//          those that have related Courses.  The query should select
+//          - the Name field from Certification__c 
+//          - the Name field from Course__c
+//
+//      HINT: The FROM clause of the query should be: FROM Certification__c
+//
+//  Execute your SOQL Query via the Command Palette, or Developer Console
+//  to verify that it's working as intended.
+//--------------------------------------------------------------------------------------------
+SELECT Name, (SELECT Name FROM Courses__r) FROM Certification__c
+WHERE Id IN (SELECT Certification__c from Course__c )

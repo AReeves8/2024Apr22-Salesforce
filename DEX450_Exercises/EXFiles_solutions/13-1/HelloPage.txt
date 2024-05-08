@@ -1,0 +1,23 @@
+<!-- Task 1 -->
+<apex:page >
+	<b>Hello World!</b><br/>
+	<b>Hello {!$User.FirstName}</b>
+</apex:page>
+
+<!-- Task 2 -->
+<apex:page standardController="Course__c" lightningStylesheets="true">
+
+    <apex:tabPanel >
+
+        <apex:tab label="Details">
+            <apex:detail relatedList="false"/>
+        </apex:tab>
+
+        <apex:tab label="Related Lists">
+            <apex:relatedList list="Course_Deliveries__r"/>
+            <apex:relatedList list="CombinedAttachments"/>
+        </apex:tab>
+
+    </apex:tabPanel>
+
+</apex:page>

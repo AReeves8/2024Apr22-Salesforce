@@ -1,0 +1,82 @@
+public class ContactsDML {
+
+    public static void standaloneDML(){
+        //----------------------------------------------------------
+        // TASK 1: Use standalone DML command to insert new Contacts.
+        //----------------------------------------------------------
+
+        // TODO #1: Declare a variable whose type is Contact named name1
+        //          and initialize it to a newly constructed Contact sObject
+        //          assigning the field LastName the value 'Minkowitz'.
+
+        // TODO #2: Declare a variable whose type is Contact named name2
+        //          and initialize it to a newly constructed Contact sObject
+        //          assigning the field LastName the value 'Singh'.
+
+        // TODO #3: Declare a variable whose type is a List of Contact sObjects
+        //          named contacts and initialize it to a newly constructed List.
+
+        // TODO #4: Add name1 to the list contacts.
+
+        // TODO #5: Add name2 to the list contacts.
+
+        // TODO #6: Use the standalone insert command to insert contacts into the database.
+
+        // When you successfully insert an sObject instance, the ID of the inserted instance is returned to it.
+        // TODO #7: Write a statement to output the ID of name1 into the debug log.
+
+        // TODO #8: Write a statement to output the ID of name2 into the debug log.
+
+    }
+
+    public static void databaseMethodDML(){
+        //-------------------------------------------------------------
+        // TASK 2: Use a Database class method to insert Contacts.
+        //-------------------------------------------------------------
+
+        // TODO #1: Declare a variable whose type is Contact named name1.
+        //          It should not set any fields.
+
+        // TODO #2: Declare a variable whose type is Contact named name2
+        //          and initialize it to a newly constructed Contact sObject
+        //          assigning the field LastName the value 'Picasso'.
+
+        // TODO #3: Declare a variable whose type is a List of Contact sObjects
+        //          named contacts and initialize it to a newly constructed List.
+
+        // TODO #4: Add name1 and name2 to the list contacts.
+
+
+        // TODO #5: Use the Database.insert command to replicate the
+        //          behavior you would expect by issuing the command:
+        //          insert contacts;
+        //          Because name1 has not been assigned a string value,
+        //          you should expect a DMLexception.
+
+    }
+
+    public static void databaseMethodPartialCommit(){
+        //-----------------------------------------------------------------------------
+        // TASK 3: Use a Database class method to insert Contacts with a partial commit
+        //-----------------------------------------------------------------------------
+
+        // TODO #1: Declare a variable whose type is Contact named name1.
+        //          It should not set any fields.
+
+        // TODO #2: Declare a variable whose type is Contact named name2
+        //          and initialize it to a newly constructed Contact sObject
+        //          assigning the field LastName the value 'Picasso'.
+
+        // TODO #3: Declare a variable whose type is a List of Contact sObjects
+        //          named contacts and initialize it to a newly constructed List.
+
+        // TODO #4: Add name1 and name2 to the list contacts.
+
+
+        // TODO #5: Use the Database.insert command to insert the Contacts
+        //          in contacts, with a partial commit.
+
+        // TODO #6: Print the id of name2 to the debug log.
+
+    }
+}

@@ -1,0 +1,15 @@
+    @AuraEnabled
+    public static Boolean deleteCertsHeld(List<Id> certIds) {
+        Boolean result = false;
+
+        // Attempt to delete the collection of certification held records
+        try {
+            delete [SELECT Id FROM Certification_Held__c WHERE Id IN :certIds];
+            result = true;
+            
+        } catch (Exception e) {
+            throw new AuraHandledException('Unable to delete records ' + e.getMessage());
+        }
+
+        return result;
+    }

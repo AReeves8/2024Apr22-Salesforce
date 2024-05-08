@@ -1,0 +1,13 @@
+//--------------------------------------------------------------------------------------------
+//  TASK 1: No Apex is necessary in this task! 
+//          Write a SOQL query that selects all Contacts. 
+//          You should select the following fields: 
+//          - the Name field from Contact 
+//          - the related Name field from Account 
+//          HINT: The FROM clause of the query should be: FROM Contact 
+//
+//  Execute your SOQL Query via the Command Palette to verify that it's working as intended.
+//  You will use this query in the next task, so copy it to your clipboard once you know it works
+//--------------------------------------------------------------------------------------------
+
+SELECT Name, Account.Name FROM Contact

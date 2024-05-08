@@ -1,0 +1,14 @@
+//--------------------------------------------------------------------------------------------
+//  TASK 1: No Apex is necessary in this task! 
+//          Write and test a query that selects all Accounts and their  
+//          related Contacts.  The query should select
+//          - the Name field from Account
+//          - the LastName field of the related Contact records.
+//          
+//          HINT: The FROM clause of the query should be: FROM Account
+//
+//  Execute your SOQL Query via the Command Palette, or Developer Console 
+//   to verify that it's working as intended.
+//--------------------------------------------------------------------------------------------
+
+SELECT Name, (SELECT LastName FROM Contacts) FROM Account
