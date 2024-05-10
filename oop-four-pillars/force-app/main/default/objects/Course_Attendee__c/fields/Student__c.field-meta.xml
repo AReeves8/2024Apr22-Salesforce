@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Student__c</fullName>
+    <description>Contact who is attending the course delivery.</description>
+    <externalId>false</externalId>
+    <label>Student</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Contact.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Technician</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Course Attendees</relationshipLabel>
+    <relationshipName>Course_Attendees</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

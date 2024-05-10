@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Certification_Element__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Certification element for this attempt</description>
+    <externalId>false</externalId>
+    <label>Certification Element</label>
+    <lookupFilter>
+        <active>true</active>
+        <booleanFilter>(1 AND 2) OR (3 AND 4)</booleanFilter>
+        <filterItems>
+            <field>$Source.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Multiple Choice</value>
+        </filterItems>
+        <filterItems>
+            <field>Certification_Element__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Multiple Choice</value>
+        </filterItems>
+        <filterItems>
+            <field>$Source.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Lab</value>
+        </filterItems>
+        <filterItems>
+            <field>Certification_Element__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Lab</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Certification_Element__c</referenceTo>
+    <relationshipLabel>Certification Attempts</relationshipLabel>
+    <relationshipName>Certification_Attempts</relationshipName>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Course_Certificate</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>page</linkType>
+    <masterLabel>Course Certificate</masterLabel>
+    <openType>replace</openType>
+    <page>CourseCertificationPage</page>
+    <protected>false</protected>
+</WebLink>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Sub-Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pending</fullName>
+                <default>false</default>
+                <label>Pending</label>
+            </value>
+            <value>
+                <fullName>Approved</fullName>
+                <default>false</default>
+                <label>Approved</label>
+            </value>
+            <value>
+                <fullName>Not Approved</fullName>
+                <default>false</default>
+                <label>Not Approved</label>
+            </value>
+            <value>
+                <fullName>Filled</fullName>
+                <default>false</default>
+                <label>Filled</label>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <label>Cancelled</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Open</controllingFieldValue>
+            <valueName>Pending</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Open</controllingFieldValue>
+            <valueName>Approved</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Not Approved</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Filled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Cancelled</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Support_Level__c</fullName>
+    <description>Level of support on the account&apos;s service contract.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Choose which level of support this account paid for on their contract.</inlineHelpText>
+    <label>Support Level</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Silver</fullName>
+                <default>true</default>
+                <label>Silver</label>
+            </value>
+            <value>
+                <fullName>Gold</fullName>
+                <default>false</default>
+                <label>Gold</label>
+            </value>
+            <value>
+                <fullName>Platinum</fullName>
+                <default>false</default>
+                <label>Platinum</label>
+            </value>
+            <value>
+                <fullName>Standard Vendor</fullName>
+                <default>false</default>
+                <label>Standard Vendor</label>
+            </value>
+            <value>
+                <fullName>Premier Vendor</fullName>
+                <default>false</default>
+                <label>Premier Vendor</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

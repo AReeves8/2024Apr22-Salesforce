@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_of_Certified_Professionals__c</fullName>
+    <description>Number of certified professionals for this certification.</description>
+    <externalId>false</externalId>
+    <label># of Certified Professionals</label>
+    <summaryForeignKey>Certification_Held__c.Certification__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

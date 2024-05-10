@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Needs_References__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Does this Job Application need references for further follow up?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check this field on to tag this Job Application so that references can be requested.</inlineHelpText>
+    <label>Needs References</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

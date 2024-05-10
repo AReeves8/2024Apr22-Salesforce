@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Multiple_Choice</fullName>
+    <active>true</active>
+    <description>Use to create a multiple choice certification attempt.</description>
+    <label>Multiple Choice</label>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Complete%2FFail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complete%2FPass</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Scheduled</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Scheduled</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

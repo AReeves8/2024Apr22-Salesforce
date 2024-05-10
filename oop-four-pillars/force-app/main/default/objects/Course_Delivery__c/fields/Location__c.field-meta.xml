@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Location__c</fullName>
+    <description>City where a course will take place.</description>
+    <externalId>false</externalId>
+    <label>Location</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Region__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Tokyo, JP</fullName>
+                <default>false</default>
+                <label>Tokyo, JP</label>
+            </value>
+            <value>
+                <fullName>Singapore, SG</fullName>
+                <default>false</default>
+                <label>Singapore, SG</label>
+            </value>
+            <value>
+                <fullName>Paris, FR</fullName>
+                <default>false</default>
+                <label>Paris, FR</label>
+            </value>
+            <value>
+                <fullName>London, GB</fullName>
+                <default>false</default>
+                <label>London, GB</label>
+            </value>
+            <value>
+                <fullName>Berlin, DE</fullName>
+                <default>false</default>
+                <label>Berlin, DE</label>
+            </value>
+            <value>
+                <fullName>San Francisco, US</fullName>
+                <default>false</default>
+                <label>San Francisco, US</label>
+            </value>
+            <value>
+                <fullName>Chicago, US</fullName>
+                <default>false</default>
+                <label>Chicago, US</label>
+            </value>
+            <value>
+                <fullName>Toronto, CA</fullName>
+                <default>false</default>
+                <label>Toronto, CA</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>APAC</controllingFieldValue>
+            <valueName>Tokyo, JP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>APAC</controllingFieldValue>
+            <valueName>Singapore, SG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EMEA</controllingFieldValue>
+            <valueName>Paris, FR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EMEA</controllingFieldValue>
+            <valueName>London, GB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EMEA</controllingFieldValue>
+            <valueName>Berlin, DE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NAMER</controllingFieldValue>
+            <valueName>San Francisco, US</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NAMER</controllingFieldValue>
+            <valueName>Chicago, US</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NAMER</controllingFieldValue>
+            <valueName>Toronto, CA</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

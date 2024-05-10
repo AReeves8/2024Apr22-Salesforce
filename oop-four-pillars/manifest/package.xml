@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <version>59.0</version>
+
+
+    <!-- so you specify the type of metadata you want to retrieve -->
+    <types>                             
+        <members>Account</members>
+        <name>CustomObject</name>
+    </types>
+
+    <!-- can also retrieve everyting for a specific type -->
+    <types>
+        <members>*</members>
+        <name>CustomObject</name>
+    </types>
+
+
+    <!-- 
+
+        https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/manifest_samples.htm
+
+        other types:
+            standard and custom fields
+            picklist field value sets
+            list views
+            packages (unlocked, unmanaged, managed)
+            security settings
+            assignment rules, auto-response rules, escalation rules
+            sharing rules
+    -->
+
+</Package>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage__c</fullName>
+    <externalId>false</externalId>
+    <label>Stage</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New</fullName>
+                <default>true</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>Phone Screen</fullName>
+                <default>false</default>
+                <label>Phone Screen</label>
+            </value>
+            <value>
+                <fullName>Schedule Interviews</fullName>
+                <default>false</default>
+                <label>Schedule Interviews</label>
+            </value>
+            <value>
+                <fullName>Interviews Completed</fullName>
+                <default>false</default>
+                <label>Interviews Completed</label>
+            </value>
+            <value>
+                <fullName>Preparing Offer</fullName>
+                <default>false</default>
+                <label>Preparing Offer</label>
+            </value>
+            <value>
+                <fullName>Offer Extended</fullName>
+                <default>false</default>
+                <label>Offer Extended</label>
+            </value>
+            <value>
+                <fullName>Closed - Rejected</fullName>
+                <default>false</default>
+                <label>Closed - Rejected</label>
+            </value>
+            <value>
+                <fullName>Closed - Accepted</fullName>
+                <default>false</default>
+                <label>Closed - Accepted</label>
+            </value>
+            <value>
+                <fullName>Closed - Declined</fullName>
+                <default>false</default>
+                <label>Closed - Declined</label>
+            </value>
+            <value>
+                <fullName>Closed - Position Closed</fullName>
+                <default>false</default>
+                <label>Closed - Position Closed</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Open</controllingFieldValue>
+            <valueName>New</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Open</controllingFieldValue>
+            <valueName>Phone Screen</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Open</controllingFieldValue>
+            <valueName>Schedule Interviews</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Open</controllingFieldValue>
+            <valueName>Interviews Completed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hold</controllingFieldValue>
+            <valueName>Offer Extended</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Closed - Rejected</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Closed - Accepted</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Closed - Declined</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Closed - Position Closed</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <description>Status of service vendor accounts.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Active - Service vendor currently services our products.
+Inactive - Service vendor no longer services our products.
+Archived - Service vendor goes out of business.</inlineHelpText>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Active</fullName>
+                <default>true</default>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+                <label>Inactive</label>
+            </value>
+            <value>
+                <fullName>Archived</fullName>
+                <default>false</default>
+                <label>Archived</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

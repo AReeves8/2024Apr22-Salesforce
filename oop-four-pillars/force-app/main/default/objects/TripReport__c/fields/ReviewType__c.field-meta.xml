@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ReviewType__c</fullName>
+    <externalId>false</externalId>
+    <label>ReviewType</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Hotel</fullName>
+                <default>false</default>
+                <label>Hotel</label>
+            </value>
+            <value>
+                <fullName>Restaurant</fullName>
+                <default>false</default>
+                <label>Restaurant</label>
+            </value>
+            <value>
+                <fullName>Training Center</fullName>
+                <default>false</default>
+                <label>Training Center</label>
+            </value>
+            <value>
+                <fullName>Students</fullName>
+                <default>false</default>
+                <label>Students</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
