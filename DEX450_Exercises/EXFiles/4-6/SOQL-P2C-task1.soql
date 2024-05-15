@@ -10,3 +10,4 @@
 //  Execute your SOQL Query via the Command Palette, or Developer Console 
 //   to verify that it's working as intended.
 //--------------------------------------------------------------------------------------------
+SELECT Name, (SELECT LastName FROM Contacts) FROM Account

@@ -14,12 +14,12 @@
 //         date literal, up to and including the colon
 //      - the variable numDays 
 
-Integer numDays = 10;
+Integer numDays = 100;
 String selectClause = 'SELECT Id, Subject, CreatedDate ';
 String fromClause = 'FROM Case ';
 
 //TODO: fill in the whereClause variable according to the spec
-String whereClause = 'PLEASE_FILL_ME_IN';  
+String whereClause = 'WHERE CreatedDate = LAST_N_DAYS:' + numDays;  
 
 String fullQuery = selectClause + fromClause + whereClause;
 List<Case> caselist = Database.query(fullQuery);

@@ -6,5 +6,5 @@
 Integer numDays = 10;
 List<Case> cases = [SELECT Id, Subject, CreatedDate
                     FROM Case
-                    WHERE CreatedDate = LAST_N_DAYS:numDays];
+                    WHERE CreatedDate = LAST_N_DAYS::numDays];
 System.debug(cases);
