@@ -1,0 +1,99 @@
+<!DOCTYPE html>     <!--tells browser the type of content in this document-->
+<html lang="en">    <!--tells the browser what language your page is in for SEO purposes-->
+
+
+<head>
+    <!-- head - all metadata for page. not rendered on page -->
+
+    <meta charset="UTF-8" />
+
+    <title>Austin Reeves' Amazing Intro to HyperText Markup Language!</title>   <!-- appear on browser tab -->
+
+
+    <!-- links to js files and css files-->
+
+    <!--
+        3 ways to do styling:
+            External Styling: linking to a stylesheet
+            Internal Styling: internal is inlcuding the styles in your <head>
+            Inline Styling: setting the "style" attribute on a tag
+    -->
+
+    <!-- EXTERNAL STYLING -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- INTERNAL STYLING -->
+    <style>
+        /* Everything in here is CSS code */
+
+        /* dot makes this a class selector */
+        .blue {
+            color: lightblue;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <!-- body - all content on webpage -->
+
+
+    <!--
+        SEMANTIC vs NON-SEMANTIC TAGS
+            semantic tags give meaning to the html
+                gives meaning to your browser -> this helps with with accessibility 
+                    increase your SEO
+
+            some describe the content of the page
+                p, h1-h6, img, form, table
+            others that describe webpage location
+                header, footer, section, aside, main
+            some even do both!
+                article, nav
+
+            non-semantic tags have no meaning - anything could be inside them
+                div, span
+                    they don't render anything themselves
+                    div - block level
+                    span - inline level
+    -->
+
+    <header>
+        <h1>Austin Reeves' Amazing Intro to HyperText Markup Language!</h1>
+        <h3 class="blue">Time to learn lots of super fun amazing HTML!!! Woo!!</h3>
+    </header>
+
+    <main>
+        <p>Hello World!</p>
+
+        <div>
+            <p id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae autem id at sint neque doloremque vero laudantium. Dolores dicta ex nesciunt deleniti, qui incidunt? Enim, repudiandae praesentium. Recusandae, odit dolorum?</p>
+            <p id="p2">Lorem ipsum dolor sit amet <span class="blue">consectetur</span> adipisicing elit. Ipsum consectetur iusto cum doloribus maiores iure veritatis officiis accusamus ullam, asperiores dicta quam necessitatibus esse laudantium distinctio laboriosam delectus cumque veniam!</p>
+            <p class="center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum explicabo nostrum adipisci exercitationem assumenda cumque animi culpa voluptate in. Aliquam tempora sunt, placeat eos tempore dicta vitae porro quas non!</p>
+        </div>
+
+        <h2>My favorite foods:</h2>
+        <ol>
+            <li style="color: cornflowerblue">French Fries</li> <!-- Inline Styling -->
+            <li>Rice</li>
+            <li>Steak</li>
+        </ol>
+    </main>
+
+    <footer>
+        <!--ul - unordered list (bullet points) -->
+        <ul>
+            <!-- li - list item -->
+            <li>
+                <!-- a for anchor (links)-->
+                <a href="https://google.com" target="_blank">Google</a>
+            </li>
+            <li>
+                <a href="mailto:areeves@skillstorm.com">Email the author!</a>
+            </li>
+        </ul>
+    </footer>
+</body>
+
+</html>

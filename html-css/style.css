@@ -1,0 +1,33 @@
+
+
+/* ELEMENT SELECTOR - applies styling to every matching element */
+h1 {
+    color: pink;
+    font-size: 77px;
+    text-align: center;
+}
+
+/* CLASS SELCTOR - applies styling to every matching class */
+.blue {
+    color: blue;
+}
+
+/* ID SELECTOR - applies styling to all matching ids*/
+#p1 {
+    font-family: 'Courier New', Courier, monospace;
+}
+#p2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* apply styling to all paragraph tags with "center" as class*/
+p.center {
+    text-align: center;
+}
+
+/* UNIVERSAL SELECTOR - applies styling to everything - probably avoid in 99.99999% of scenarios
+* {
+    color: red;
+}
+
+*/
