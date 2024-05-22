@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Certifying_Instructor__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Instructor who certifies candidate.</description>
+    <externalId>false</externalId>
+    <label>Certifying Instructor</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>User.Is_Instructor__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Certification_Attempts</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

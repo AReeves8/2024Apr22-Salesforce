@@ -14,10 +14,13 @@
 		<members>Certification_Held__c.Date_Achieved__c</members>
 		<members>Error_Log__c.Message__c</members>
 		<members>Error_Log__c.Source__c</members>
+		<members>Certification_Attempt__c.Certification_Id__c</members>
+		<members>Certification_Attempt__c.Number_of_Elements_for_Cert__c</members>
 		<name>CustomField</name>
 	</types>
 	<types>
 		<members>Certification_Held__c</members>
+		<members>Certification_Attempt__c</members>
 		<members>Error_Log__c</members>
 		<name>CustomObject</name>
 	</types>
