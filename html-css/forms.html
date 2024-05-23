@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Form Demo</h1>
+    </header>
+    <main>
+        <p>Please fill out this form!</p>
+        <form>
+
+            <!-- 
+                labels: provide text to label something
+                inputs: provide various means to capture different types of data. many different options for "type" attribute
+                buttons: provide a way to invoke some action
+            -->
+            
+            <label for="firstName">First Name:</label>
+            <input id="firstName" type="text" placeholder="John" name="firstName"/>
+        
+            <label for="lastName">Last Name:</label>
+            <input id="lastName" type-="text" placeholder="Doe" name="lastName"/>
+            
+            <div class="form-group" id="email-input">       <!-- adding divs will but each of the inputs on a newline; also allows for styling a certain label/input -->
+                <label for="email">Email:</label>
+                <input id="email" type="email"/>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input id="password" type="password" minlength="8" required/>
+            </div>
+            <div>
+                <label for="">Age:</label>
+                <input type="number" min="18" max="100" step="0.5"/>
+            </div>
+            <div>
+                <label>Today's Date:</label>
+                <input type="date"/>
+            </div>
+            <div>
+                <label>Favorite Color:</label>
+                <input type="color"/>
+            </div>
+
+            <!-- submit buttons and submit inputs do the same thing when inside a form -->
+            <input type="submit" value="submit"/>       <!-- input with type="button" creates a button that has no default behavior -->
+            <button type="submit">Submit</button>       <!-- "submit" is the default behavior for buttons -->
+        </form>
+
+        <!-- radio buttons are used for selecting a single option from a list (think picklist) -->
+        <h1>Radio Buttons</h1>
+        <form>
+            <h2>What is your favorite dessert?</h2>
+
+            <!-- radio buttons all need to have the same value for the "name" attribute-->
+            <input type="radio" value="applePie" name="favDessert"/>
+            <label>Apple Pie</label>
+            <br/>
+            <input type="radio" value="cheesecake" name="favDessert"/>
+            <label>Cheesecake</label>
+            <br/>
+            <input type="radio" value="icecream" name="favDessert"/>
+            <label>Ice Cream</label>
+        </form>
+
+        <!-- checkboxes are used for selecting multiple options from a list (think multi-select picklist) -->
+        <h1>Checkboxes</h1>
+        <form>
+            <h2>What other colors do you like?</h2>
+            <input type="checkbox" id="aquaId" value="aqua"/>
+            <label for="aquaId">Aqua</label>
+            <br/>
+            <input type="checkbox" id="greenId" value="green"/>
+            <label for="greenId">Green</label>
+            <br/>
+            <input type="checkbox" id="pinkId" value="pink"/>
+            <label for="pinkId">Pink</label>
+            <br/>
+            <input type="checkbox" id="orangeId" value="orange"/>
+            <label for="orangeId">Orange</label>
+            <input type="submit" value="submit"/>
+        </form>
+
+        
+    </main>
+    
+</body>
+</html>

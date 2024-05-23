@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Tables</title>
+
+    <style>
+        /* may need to include styling to get table borders */
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- tables are a common way to display data: even if its styled to not look like a table -->
+    <table>
+
+        <!-- thead is optional but will always be the first row of the table -->
+        <thead>
+            <!-- tr: table row: defines a row within the table -->
+            <tr>        
+                <th># of Chores</th>    <!-- th: table header: has predefined styling -->
+                <th>Saturday</th>
+                <th>Sunday</th>
+            </tr>
+        </thead>
+
+        <!-- tbody is required. its where the data goes -->
+        <tbody>
+            
+            <tr>
+                <th>Morning</th>    <!-- can have row-level headers -->
+                <td>1</td>          <!-- td: table data -->
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Afternoon</th>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <th>Evening</th>
+                <td>0</td>
+                <td>1</td>
+            </tr>
+        </tbody>
+
+        <!-- tfoot is optional but will always be the last row in the table -->
+        <tfoot>
+            <tr>
+                <th>Total</th>
+                <td>3</td>
+                <td>3</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <br/><br/>
+
+    <table>
+        <tr>
+            <th></th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+        </tr>
+        <tr>
+            <!-- rowspan is merges row cells that are in the same column together, will span 2 rows-->
+            <!-- colspan is merges column cells that are in the same row together, will span 5 columns-->
+            <th>Morning</th>
+            <td rowspan="2" colspan="5">Work</td>
+            <td rowspan="2" colspan="2">Relaxation</td>
+        </tr>
+        <tr>
+            <th>Afternoon</th>
+        </tr>
+        <tr>
+            <th>Evening</th>
+            <td colspan="7">Dinner</td>
+        </tr>
+    </table>
+
+</body>
+</html>

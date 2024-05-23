@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Properties</title>
+    <style>
+        #container {
+            min-height: 2000px;
+            border: 2px solid black;
+            margin: 10px;
+            /*display: flex;*/
+            flex-wrap: wrap;
+            justify-content:space-around;
+            align-items: flex-start;
+            flex-direction:column-reverse;
+        }
+
+        .box {
+            border: 10px solid blue;
+            min-height: 100px;
+            min-width: 100px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 
+        Flexbox Parent Properties
+        1. create div and id selector conatiner
+        2. style div min-height, border, margin
+        3. display: flex, flex-start, end, center 
+        4. justify-content: space-around, center
+        5. to show flex-wrap: wrap turn off display: flex
+        6. flex-direction: turn off flex-wrap
+            - column-reverse, row-reverse
+
+    -->
+    
+    <div id="container">
+        <div class="box"><h1>1</h1></div>
+        <div class="box"><h1>2</h1></div>
+        <div class="box"><h1>3</h1></div>
+        <div class="box"><h1>4</h1></div>
+        <div class="box"><h1>5</h1></div>
+        <div class="box"><h1>6</h1></div>
+    </div>
+    
+</body>
+</html>
