@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+
+    <!-- defer will make it so the js is loaded after the DOM is -->
+    <script src="index.js" defer>   
+
+        // all of this will be done in the file
+
+    </script>
+
+    <style>
+
+        * {
+            font-size: larger;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .box {
+            height: 4rem; /*  1 rem = 32px */
+            width: 4rem;
+            margin: 10px;
+            background-color: darkslateblue;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+    <button id="create-box-button">Create Box</button>
+    <div class="container" id="box-container">
+
+        <!-- leave empty, but fill dynamically in JS -->
+
+    </div>
+
+    <button id="generate-fact">Generate New Cat Fact</button>
+    <div class="container" id="fact-container">
+
+        <!-- leave empty, but fill dynamically in JS -->
+
+    </div>
+    
+</body>
+</html>
