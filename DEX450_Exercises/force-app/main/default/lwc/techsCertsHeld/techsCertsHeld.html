@@ -1,5 +1,38 @@
 <template>
     
-    <h2>TECHS CERTS HELD</h2>
+
+
+    <lightning-card>
+
+        <lightning-button 
+            slot="actions"
+            disabled={disableDeleteBtn}
+            label="Delete"
+            variant="destructive"
+            onclick={handleDeleteButton}
+        >
+        </lightning-button>
+
+        <template lwc:if={errorMessage}>
+            <div class="slds-var-p-horizontal_small slds-text-color_error">
+                {errorMessage}
+            </div>
+        </template>
+    
+    
+        <lightning-datatable
+            key-field="Id"
+            data={rowData}
+            columns={colData}
+            onrowselection={handleRowSelection}
+        >
+        </lightning-datatable>
+
+
+    </lightning-card>
+    
+
+
+
 
 </template>

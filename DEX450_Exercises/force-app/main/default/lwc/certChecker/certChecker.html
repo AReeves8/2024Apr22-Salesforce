@@ -1,10 +1,25 @@
 <template>
-    <h2>CERT CHECKER</h2>
+   
+    <lightning-card 
+        title={cardTitle}
+        icon-name="utility:list"
+    >
+    </lightning-card>
 
-    <c-techs-certs-held></c-techs-certs-held>
+    <lightning-layout vertical-align="center" multiple-rows>
+        
+        <lightning-layout-item padding="around-small" size="12">
+            <c-techs-certs-held acc-record-id={recordId} onselectedtechids={handleSelectedTechIds}></c-techs-certs-held>
+        </lightning-layout-item>
 
-    <c-cert-attempts></c-cert-attempts>
+        <lightning-layout-item padding="around-small" size="12">
+            <c-cert-attempts tech-ids={techIds}></c-cert-attempts>
+        </lightning-layout-item>
 
-    <c-courses-attended></c-courses-attended>
+        <lightning-layout-item padding="around-small" size="12">
+            <c-courses-attended tech-ids={techIds}></c-courses-attended>
+        </lightning-layout-item>
+
+    </lightning-layout>
 
 </template>
