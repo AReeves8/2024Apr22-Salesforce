@@ -26,6 +26,7 @@ export default class SearchResults extends LightningElement {
 
             // setting the table data
             this.tableRowData = result.data;
+            console.log(result.data);
 
             // ensuring the error message does not display
             this.errorMessage = null;
@@ -54,7 +55,7 @@ export default class SearchResults extends LightningElement {
         this.selectedObject = message.object;
         this.selectedFields = message.fields;
 
-        console.log('OBJECT:' + this.selectedObject + '\nFIELDS: ' + this.selectedFields.toString());
+        console.log('OBJECT: ' + this.selectedObject + '\nFIELDS: ' + this.selectedFields.toString());
 
         // setting columns with field data and formatting data to be used by lightning-datatable
         this.tableColData = this.selectedFields.map((element) => ({

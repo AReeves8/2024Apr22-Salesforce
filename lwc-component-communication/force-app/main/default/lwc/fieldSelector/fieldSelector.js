@@ -57,6 +57,5 @@ export default class FieldSelector extends LightningElement {
             } 
         });
         this.dispatchEvent(fieldSubmit);
-
     }
 }
