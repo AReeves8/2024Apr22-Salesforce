@@ -1,0 +1,31 @@
+<template>
+    
+    <!-- if there's an error message, display it, otherwise display the listbox -->
+    <template lwc:if={errorMessage}>
+        <div class="slds-text-align_center slds-text-heading_small slds-text-color_error">
+            {errorMessage}
+        </div>
+    </template>
+    <template lwc:else>
+        <lightning-dual-listbox
+            label="Select the fields you want to Use. (Max 10)"
+            source-label="Available Fields"
+            selected-label="Selected Fields"
+            max="10"
+            options={allFieldsList}
+            onchange={handleSelections}
+        >
+        </lightning-dual-listbox>
+
+        <lightning-button
+            variant="brand"
+            label="Submit"
+            onclick={handleSubmit}
+            disabled={disableButton}
+            class="slds-var-p-around_small slds-align_absolute-center"
+        >
+        </lightning-button>
+
+    </template>
+
+</template>

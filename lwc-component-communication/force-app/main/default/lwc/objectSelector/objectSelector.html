@@ -1,0 +1,24 @@
+<template>
+    <lightning-card>
+
+
+
+        <lightning-combobox
+            options={objectsList}
+            value={selectedObject}
+            label="Select the Object to Use"
+            onchange={handleSelection}
+            class="slds-var-p-around_small"
+        >
+        </lightning-combobox>
+
+
+        <template lwc:if={objectSelected}>
+            <div class="slds-var-p-around_small">
+                <!-- passing in the selected object to the field selctor component -->
+                <c-field-selector object-to-use={selectedObject} onfieldsubmit={handleFields}></c-field-selector>
+            </div>
+        </template>
+
+    </lightning-card>
+</template>
