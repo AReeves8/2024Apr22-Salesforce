@@ -1,4 +1,6 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, wire } from 'lwc';
+import OBJECT_SEARCH_CHANNEL from '@salesforce/messageChannel/objectSearchChannel__c';
+import { MessageContext, publish } from 'lightning/messageService';
 
 export default class ObjectSelector extends LightningElement {
 
@@ -10,6 +12,10 @@ export default class ObjectSelector extends LightningElement {
         {label : 'Lead', value : 'Lead'}
     ];
 
+    @wire(MessageContext)
+    messageContext;
+
+
     // handles the onChange event from the combobox
     handleSelection(event) {
         this.objectSelected = true;
@@ -18,7 +24,15 @@ export default class ObjectSelector extends LightningElement {
     }
 
     handleFields(event) {
-        console.log('FIELDS BEING HANDLED');
+        const payload = {
+            object : this.selectedObject,
+            fields : event.detail.selectedFields
+        }
+
+        console.log('PAYLOAD: ' + payload);
+
+        // sending object and field data across the lightning message service
+        publish(this.messageContext, OBJECT_SEARCH_CHANNEL, payload);
     }
 
 }

@@ -1,13 +1,45 @@
 <template>
-
     <lightning-card>
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item padding="around-small" size="12">
 
-        <div class="slds-text-align_center slds-text-heading_medium">
-            Please select an object and fields.
-        </div>
+                <!-- 
+                    if there's an error, display the error message. 
+                    if object and fields have been selected, display the table. 
+                    otherwise, display an instructional message. 
+                -->
+                <template lwc:if={errorMessage}>
 
+                    <div class="slds-text-align_center slds-text-heading_medium slds-text-color_error">
+                        {errorMessage}
+                    </div>
+                    
+                </template>
+                <template lwc:elseif={toggleTable}>
 
+                    <div class="slds-text-align_center slds-text-heading_large slds-var-p-around_medium">
+                        {selectedObject} Records Returned
+                    </div>
+
+                    <lightning-datatable
+                        key-field="id"
+                        data={tableRowData}
+                        columns={tableColData}
+                        class="slds-var-p-around_small"
+                        hide-checkbox-column
+                    >
+                    </lightning-datatable>
+
+                </template>
+                <template lwc:else>
+
+                    <div class="slds-text-align_center slds-text-heading_medium">
+                        Please select an object and up to 10 fields.
+                    </div>
+
+                </template>
+
+            </lightning-layout-item>
+        </lightning-layout>        
     </lightning-card>
-
-    
 </template>
