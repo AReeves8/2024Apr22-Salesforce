@@ -50,6 +50,5 @@ public with sharing class HttpRequestDemo {
         System.debug(resp.getStatusCode());
         System.debug(resp.getBody());
 
-
     }
 }
