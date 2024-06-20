@@ -1,3 +1,3 @@
 
 HttpRequestDemo.simpleGetRequest();
-HttpRequestDemo.getRequestWithCredentials();
+//HttpRequestDemo.getRequestWithCredentials();

@@ -16,8 +16,8 @@ public with sharing class HttpRequestDemo {
         Boolean deleted;
     }
 
-
-    public static void simpleGetRequest() {
+    // CHANGED TO BOOLEAN
+    public static Boolean simpleGetRequest() {
 
         // creating http request object
         HttpRequest req = new HttpRequest();
@@ -29,10 +29,16 @@ public with sharing class HttpRequestDemo {
         HttpResponse resp = http.send(req);                 // sends Http request created above and saving the response
         System.debug(resp.getBody());
 
-        // turning the JSON response into Apex sObject
-        CatFact fact = (CatFact) JSON.deserialize(resp.getBody(), CatFact.class);   // need to cast from Object to actual class being used
-        System.debug(fact);
-
+        // ADDED POSITIVE AND NEGATIVE LOGIC
+        if(resp.getStatusCode() == 200) {
+            // turning the JSON response into Apex sObject
+            CatFact fact = (CatFact) JSON.deserialize(resp.getBody(), CatFact.class);   // need to cast from Object to actual class being used
+            System.debug(fact);
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
 
